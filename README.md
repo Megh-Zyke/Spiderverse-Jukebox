@@ -1,5 +1,5 @@
 # Check out my Favourite songs from Spiderverse
-[Click here](https://www.google.com](https://megh-zyke.github.io/Spiderverse-Jukebox/)https://megh-zyke.github.io/Spiderverse-Jukebox/)
+[Click here](https://megh-zyke.github.io/Spiderverse-Jukebox/)
 
 This is a front end project which utilizes the core concepts of 
 * HTML
