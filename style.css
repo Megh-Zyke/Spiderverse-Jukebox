@@ -271,3 +271,10 @@ body{
     pointer-events: none;
     color: var(--violet);
   }
+
+  .footer{
+    text-align: center;
+    margin-top: 18px;
+    font-size: 18px;
+    color :var(--lightblack);
+  }
