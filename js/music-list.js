@@ -27,7 +27,7 @@ let allMusic = [
     {
         name:"Mona Lisa",
         artist: "Dominic Fike",
-        img : "Spider-Man-Across-The-Spider-Verse-4K-Wallpaper.jpg",
+        img : "artworks-Qg1W7Ri4QEyO-0-t500x500.jpg",
         src : "songs/Mona Lisa.mp3"
     },
     {
@@ -47,6 +47,12 @@ let allMusic = [
         artist: "Blackway & Black Caviar",
         img : "800x600_Spider-man_onsale7.jpg",
         src : "songs/What's Up Danger.mp3"
+    },
+    {
+        name:"Scared of the Dark",
+        artist: "Lil Wayne",
+        img : "931a5892888884f71b26129f93e5e9a8.jpg",
+        src : "songs/Scared of the Dark.mp3"
     }
 
 ]
