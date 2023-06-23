@@ -46,7 +46,7 @@ function nextMusic(){
     musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
-    playingSong(); 
+    playingNow(); 
   }
 
   function prevMusic(){
@@ -54,7 +54,7 @@ function nextMusic(){
     musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
-    playingSong(); 
+    playingNow(); 
   }
 
 //function to pause the music
@@ -82,19 +82,54 @@ document.addEventListener("keypress" , function(e){
 
 nextButton.addEventListener("click", function(){
         //function for playing the next nmusic
+
+        let getText = repeatBtn.innerText;
+        if(getText== "repeat"){
         musicIndex++;
         musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
         loadMusic(musicIndex);
         playMusic();
+        }
+
+        else if(getText== "repeat_one"){
+            loadMusic(musicIndex);
+        playMusic();
+        
+        }
+        else if(getText== "shuffle"){
+            let randIndex = Math.floor(Math.random()*allMusic.length + 1);
+           do{
+            randIndex = Math.floor(Math.random()*allMusic.length + 1);
+           }while(musicIndex == randIndex);
+           
+           let index =  randIndex;
+           loadMusic(index);
+           playMusic();
+           
+          
+    }
+    playingNow();
+
 })
 
 prevButton.addEventListener("click", function(){
     //function for playing the previous nmusic
+    
+    let getText = repeatBtn.innerText;
+    if(getText== "repeat"){
     musicIndex--; 
     musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
     loadMusic(musicIndex);
     loadMusic(musicIndex);
     playMusic();
+    playingNow();
+}
+    else if(getText== "repeat_one"){
+        loadMusic(musicIndex);
+    playMusic();
+    playingNow();
+    }
+
 })
 
 mainAudio.addEventListener("timeupdate", (e)=>{
@@ -145,7 +180,7 @@ progressArea.addEventListener("click", (e)=>{
     mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
     
     playMusic();
-    playingSong();
+    playingNow();
 })
 
 
@@ -196,7 +231,9 @@ mainAudio.addEventListener("ended" , ()=>{
            do{
             randIndex = Math.floor(Math.random()*allMusic.length + 1);
            }while(musicIndex == randIndex);
-           loadMusic(randIndex);
+           
+           let index =  randIndex;
+           loadMusic(index);
            playMusic();
            break;
 
@@ -221,7 +258,7 @@ for (let i = 0; i < allMusic.length; i++) {
     let liTag = `<li li-index="${i + 1}">
                   <div class="row">
                     <span>${allMusic[i].name}</span>
-                    <p>${allMusic[i].artist}</p>
+                    <p >${allMusic[i].artist}</p>
                   </div>
                   <audio class="${allMusic[i].src}" src="${allMusic[i].src}"></audio>
                 </li>`;
